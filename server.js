@@ -11,6 +11,7 @@ const app = express();
 //middleware
 app.use(bodyParser.json());
 app.use(cors());
+app.use('/api', rtsIndex);
 
 //DB Config
 const db = require('./config/keys').mongoURI;
