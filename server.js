@@ -1,7 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+require('./models/user.model'); 
+
+const rtsIndex = require('./routes/index.router');
 
 const app = express();
+
+//middleware
+app.use(bodyParser.json());
+app.use(cors());
 
 //DB Config
 const db = require('./config/keys').mongoURI;
