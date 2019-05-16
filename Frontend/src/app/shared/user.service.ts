@@ -16,6 +16,8 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  //HttpMethods
+
   postUser(user:User){
     return this.http.post(environment.apiBaseUrl+'/register' , user);
   }
@@ -23,6 +25,12 @@ export class UserService {
   login(authCredentials){
     return this.http.post(environment.apiBaseUrl + '/authenticate' ,authCredentials)
   }
+
+  getUserProfile(){
+    return this.http.get(environment.apiBaseUrl + '/userProfile');
+  }
+
+  //HelperMethods
 
   setToken(token:string){
     localStorage.setItem('token',token);
