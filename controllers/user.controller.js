@@ -1,6 +1,7 @@
 const  mongoose = require('mongoose');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
+const _ = require('lodash');
 
 const User = mongoose.model('User');
 
@@ -33,4 +34,15 @@ module.exports.authenticate = (req , res , next) => {
         //unknown user or wrong password
         else return res.status(404).json(info);
     })(req , res);
+}
+
+module.exports.userProfile = (req, res, next) =>{
+    User.findOne({ _id: req._id },
+        (err, user) => {
+            if (!user)
+                return res.status(404).json({ status: false, message: 'User record not found.' });
+            else
+                return res.status(200).json({ status: true, user : _.pick(user,['fullName','email']) });
+        }
+    );
 }
