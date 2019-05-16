@@ -23,6 +23,8 @@ constructor(private userService:UserService , private router : Router) { }
   serverErrorMessages:string;
 
   ngOnInit() {
+    if(this.userService.isLoggedIn())
+    this.router.navigateByUrl('/userprofile');
   }
 
   onSubmit(form:NgForm){
