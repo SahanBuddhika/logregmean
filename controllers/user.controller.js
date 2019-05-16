@@ -19,3 +19,8 @@ module.exports.register = (req , res , next) => {
            
     });
 } 
+
+module.exports.authenticate = (req , res , next) => {
+    //call for passport authentication
+    passport.authenticate('local' , (err , user , info) => {});
+}
