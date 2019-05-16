@@ -9,6 +9,11 @@ export class SignInComponent implements OnInit {
 
   constructor() { }
 
+  model ={
+    email:'',
+    password:''
+  };
+
   ngOnInit() {
   }
 
