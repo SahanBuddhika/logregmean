@@ -4,7 +4,16 @@
 /* BASIC */
 
 html {
-  background-color: #56baed;
+  /* background-color: #56baed; */
+  position: relative;
+  background:url("./assets/img/background.jpg");
+  background-size: auto;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 94vh;
+
+  margin-top: -24px;
+  margin-bottom: -50px;
 }
 
 body {
@@ -333,7 +342,7 @@ th:last-child {
 
 tr {
   border-top: 1px solid #C1C3D1;
-  border-bottom-: 1px solid #C1C3D1;
+  border-bottom: 1px solid #C1C3D1;
   color:#666B85;
   font-size:16px;
   font-weight:normal;

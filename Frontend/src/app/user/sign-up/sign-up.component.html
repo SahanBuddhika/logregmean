@@ -19,6 +19,8 @@
     <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
   </div>
 
+
+
   <input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Password"
   minlength="4" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">
   <div *ngIf="signUpForm.submitted && password.errors">
@@ -26,6 +28,7 @@
     <label *ngIf="password.errors.minlength" class="validation-message">Enter atleast 4 characters.</label>
   </div>
 
+  
   <input type="submit" value="Sign Up">
 
 </form>
